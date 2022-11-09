@@ -23,7 +23,7 @@ Review.init(
         key: 'id'
       }
     },
-    created_date: {
+    created_at: {
       type: DataTypes.DATE,
       allowNull: false
     }
