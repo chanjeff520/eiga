@@ -23,6 +23,14 @@ Review.init(
         key: 'id'
       }
     },
+    movie_id: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references: {
+        model: 'movie',
+        key: 'id'
+      }
+    },
     created_at: {
       type: DataTypes.DATE,
       allowNull: false
