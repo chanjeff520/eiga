@@ -1,39 +1,21 @@
 const express = require('express')
 const router = require('express').Router();
-const { Movie,  } = require('../../models')
+const { Movie } = require('../../models')
 
 //get all movies
 router.get('/', async (req, res ) => {
-//     try {
-//         const movieData = await Movie.findAll()
-//         const movies = movieData.map((movies) =>
-//         movies.get({ plain: true }))
-//         res.render.status(200)
-//         // send it to the views
-//     } catch (err){
-//         res.status(500).json(err)
-//     console.log("where are you?")
-// }
-    
-})
+    console.log('all movies');
+});
 // pulls a single from movie id
 router.get('/:id', async (req, res ) => {
-//     try {
-//         const movieData = await Movie.findAll()
-//         const movies = movieData.map((movies) =>
-//         movies.get({ plain: true }))
-//         res.render.status(200)
-//         // send it to the views
-//     } catch (err){
-//         res.status(500).json(err)
-//     console.log("where are you?")
-// }
-    
-})
+    console.log("a signle movie");
+});
 //reviews of a single movie
 router.get('/:id/reviews', async (req,res) => {
-
+    console.log("a single movie with its associated reviews");
 });
 //create a review for a single movie
-router.post('/:id/reviews', )
-module.exports.router
+router.post('/:id/reviews', async (req,res) => {
+    console.log("create a review for a certain movie");
+});
+module.exports = router;
