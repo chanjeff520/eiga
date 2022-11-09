@@ -1,6 +1,6 @@
 const express = require('express')
 const router = require('express').Router();
-const { User,  } = require('../../models')
+const { User } = require('../../models')
 
 //get all users
 router.get('/', async (req, res ) => {
@@ -62,4 +62,4 @@ router.post('/logout', async (req, res) => {
 
 
 
-module.exports.router
+module.exports = router;

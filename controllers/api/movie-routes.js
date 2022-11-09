@@ -1,6 +1,6 @@
 const express = require('express')
 const router = require('express').Router();
-const { Movie,  } = require('../../models')
+const { Movie } = require('../../models')
 
 //get all movies
 router.get('/', async (req, res ) => {
@@ -18,4 +18,4 @@ router.get('/:id/reviews', async (req,res) => {
 router.post('/:id/reviews', async (req,res) => {
     console.log("create a review for a certain movie");
 });
-module.exports.router
+module.exports = router;
