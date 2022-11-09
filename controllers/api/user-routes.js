@@ -4,6 +4,7 @@ const { User } = require('../../models')
 
 //get all users
 router.get('/', async (req, res ) => {
+    res.send("get all users");
     console.log("get all users")
 //     try {
 //         const movieData = await Movie.findAll()
@@ -20,6 +21,7 @@ router.get('/', async (req, res ) => {
 
 // get a single user with their associated review
 router.get('/:user_id/movies/review', async (req, res ) => {
+    res.send("get a single user with their associated reviews");
     console.log("get a single user with their associated reviews")
 //     try {
 //         const movieData = await Movie.findAll()
@@ -36,6 +38,7 @@ router.get('/:user_id/movies/review', async (req, res ) => {
 
 //create a user
 router.post('/', async (req, res ) => {
+    res.send("create a user");
     console.log("create a user")
 //     try {
 //         const movieData = await Movie.findAll()
@@ -52,11 +55,13 @@ router.post('/', async (req, res ) => {
 
 //user login
 router.post('/login', async (req, res) => {
+    res.send("login");
     console.log("login")
 })
 
 //user logout
 router.post('/logout', async (req, res) => {
+    res.send("logout");
     console.log("logout")
 })
 
