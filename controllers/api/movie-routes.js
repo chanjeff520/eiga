@@ -11,6 +11,7 @@ router.get('/', async (req, res ) => {
         const movies = dbMovieData.map((movies) =>
         movies.get({plain: true}));
         }
+    
     catch(err){
         res.status(500).json(err)
     }
