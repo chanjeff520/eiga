@@ -29,11 +29,11 @@ Movie.init(
     },
     image: { //the movie poster
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     },
     movie_banner: { //background image
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: false
     }
   },
   {
