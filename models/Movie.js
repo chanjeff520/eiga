@@ -26,6 +26,14 @@ Movie.init(
     release_date: {
       type: DataTypes.DATE,
       allowNull: false
+    },
+    image: { //the movie poster
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    movie_banner: { //background image
+      type: DataTypes.STRING,
+      allowNull: true
     }
   },
   {
