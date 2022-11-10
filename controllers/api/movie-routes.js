@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express')
 const router = require('express').Router();
 const { Movie } = require('../../models')
@@ -6,12 +7,12 @@ const { Movie } = require('../../models')
 router.get('/', async (req, res ) => {
     try {
         const dbMovieData = await Movie.findAll(
-            {attributes: ['title,', 'release_date', 'image']}
+            {attributes: ['title', 'release_date', 'image']}
         )
         const movies = dbMovieData.map((movies) =>
         movies.get({plain: true}));
-        }
-    
+        res.json(movies)
+    }
     catch(err){
         res.status(500).json(err)
     }
