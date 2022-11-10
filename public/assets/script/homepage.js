@@ -3,8 +3,17 @@
 //get api
 //
 
-const movieList = 
+// const movieList = 
 
-function generateMoviesByTitle() {
+// function generateMoviesByTitle() {
     
-}
+// }
+
+//basic of fetch requires
+fetch('/api/movie')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+
+
+console.log("MEOWWW")
