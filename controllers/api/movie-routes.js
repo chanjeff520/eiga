@@ -20,8 +20,19 @@ router.get('/', async (req, res ) => {
 });
 // pulls a single from movie id
 router.get('/:id', async (req, res ) => {
-    console.log("a single movie");
+    try {
+        const dbMovieData = await Movie.findByPk(
+            req.params.id)
+        if ( !dbMovieData) {
+            res.status(404).json({message: 'No movie found with that id!' });
+            return;
+        }
+        res.status(200).json(dbMovieData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
 });
+
 //reviews of a single movie
 router.get('/:id/reviews', async (req,res) => {
     console.log("a single movie with its associated reviews");
