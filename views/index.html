@@ -19,14 +19,26 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
 
     <title>Hello, world!</title>
   </head>
-  <body style="background-image: url('/assets/background-images/Ghibli_Island_Background.jpg'); background-repeat: no-repeat; background-size: cover;" >
+  <body class="ghibliBackGround">
+    <!-- <img class="bg-img ghibliBackGround" src="/assets/background-images/Ghibli_Cagliostro_House_Background.png">
+    <img class="bg-img ghibliBackGround" src="/assets/background-images/Ghibli_Farmland_Background.jpg">
+    <img class="bg-img ghibliBackGround" src="/assets/background-images/Ghibli_Forest_Background.jpg">
+    <img class="bg-img ghibliBackGround" src="/assets/background-images/Ghibli_God_Ray_Forest_Background.png">
+    <img class="bg-img ghibliBackGround" src="/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg">
+    <img class="bg-img ghibliBackGround" src="/assets/background-images/Ghibli_Island_Background.jpg">
+    <img class="bg-img ghibliBackGround" src="/assets/background-images/Ghibli_Night_City_Background.jpg">
+    <img class="bg-img ghibliBackGround" src="/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"> -->
     <h1></h1>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Eiga</a>
+      <a class="navbar-brand" href="/"><img src="../assets/images/logo-image.png" style="max-width: auto; max-height: 55px"></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -42,19 +54,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
-              >Home <span class="sr-only">(current)</span></a
+            <a class="nav-link h4" href="/" 
+              >Eiga <span class="sr-only">(current)</span></a
             >
           </li>
 
           <li class="nav-item" id="loginLink">
-            <a class="nav-link" href="/login">Log in</a>
+            <a class="nav-link h4" href="/login">Log in</a>
           </li>
           <li class="nav-item" id="logoutLink">
-            <a class="nav-link" href="/logout">Log out</a>
+            <a class="nav-link h4" href="/logout">Log out</a>
           </li>
           <li class="nav-item" id="signupLink">
-            <a class="nav-link" href="/signup">Sign up</a>
+            <a class="nav-link h4" href="/signup">Sign up</a>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -143,3 +155,7 @@
     <script src="/assets/script/homepage.js"></script>
   </body>
 </html>
+
+
+<!-- put code below in body tag if the dynamic background images don't work -->
+<!-- style="background-image: url('/assets/background-images/Ghibli_Island_Background.jpg'); background-repeat: no-repeat; background-size: cover;" -->
