@@ -3,20 +3,60 @@
 //get api
 //
 
-// const movieList = 
+function generateMovieCards(data) {
+    //main Container
+    const cardContainer = document.getElementById("card-container");
 
-// function generateMoviesByTitle() {
-    
-// }
+    for(let i=0; i< data.length; i++){
+    //containers that need to be generated
+    let cardEl = document.createElement('div');
+    let cardImg = document.createElement('img');
+    let cardBody= document.createElement('div');
+    let cardTitle= document.createElement('h5');
+    let cardLink = document.createElement('a');
+
+    //cardEl attributes
+    cardEl.setAttribute("class", "card m-2");
+    cardEl.setAttribute("style", "width: 16rem");
+    //cardImg attributes
+    cardImg.setAttribute("class", "card-img-top");
+    cardImg.setAttribute("src", data[i].image);
+    cardImg.setAttribute("alt", "Movie Poster");
+    //cardBody attributes
+    cardBody.setAttribute("class", "card-body");
+    //cardTitle attriubtes
+    cardTitle.setAttribute("class", "card-title d-flex justify-content-center");
+    //cardLink Attributes
+    cardLink.textContent = data[i].title;
+    cardLink.setAttribute("href", `/movie/${i+1}`);
+    cardLink.setAttribute("class", "text-center");
+
+    //appending childs to approiate places
+    cardTitle.appendChild(cardLink);
+    cardBody.appendChild(cardTitle);
+    //appending to the card
+    cardEl.appendChild(cardImg); cardEl.appendChild(cardBody);
+    //appending to cardContainer
+    cardContainer.appendChild(cardEl);
+
+    }
+
+}
 
 //basic of fetch requires
 fetch('/api/movie')
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((data) => generateMovieCards(data));
 
 
 
 console.log("MEOWWW")
+
+
+
+
+
+
 
 // Automatic Slideshow - change image every 20 second
 var myIndex = 0;
