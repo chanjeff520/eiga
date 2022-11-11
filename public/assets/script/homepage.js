@@ -7,6 +7,7 @@ function generateMovieCards(data) {
     //main Container
     const cardContainer = document.getElementById("card-container");
 
+    for(let i=0; i< data.length; i++){
     //containers that need to be generated
     let cardEl = document.createElement('div');
     let cardImg = document.createElement('img');
@@ -19,15 +20,16 @@ function generateMovieCards(data) {
     cardEl.setAttribute("style", "width: 16rem");
     //cardImg attributes
     cardImg.setAttribute("class", "card-img-top");
-    cardImg.setAttribute("src", data[0].image);
+    cardImg.setAttribute("src", data[i].image);
     cardImg.setAttribute("alt", "Movie Poster");
     //cardBody attributes
     cardBody.setAttribute("class", "card-body");
     //cardTitle attriubtes
     cardTitle.setAttribute("class", "card-title d-flex justify-content-center");
     //cardLink Attributes
-    cardLink.textContent = data[0].title;
-    cardLink.setAttribute("href", `/movie/${1}`);
+    cardLink.textContent = data[i].title;
+    cardLink.setAttribute("href", `/movie/${i+1}`);
+    cardLink.setAttribute("class", "text-center");
 
     //appending childs to approiate places
     cardTitle.appendChild(cardLink);
@@ -36,6 +38,8 @@ function generateMovieCards(data) {
     cardEl.appendChild(cardImg); cardEl.appendChild(cardBody);
     //appending to cardContainer
     cardContainer.appendChild(cardEl);
+
+    }
 
 }
 

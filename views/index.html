@@ -19,10 +19,7 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="/assets/css/style.css"
-    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
 
     <title>Hello, world!</title>
   </head>
@@ -38,7 +35,11 @@
     <h1></h1>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/"><img src="../assets/images/logo-image.png" style="max-width: auto; max-height: 55px"></a>
+      <a class="navbar-brand" href="/"
+        ><img
+          src="../assets/images/logo-image.png"
+          style="max-width: auto; max-height: 55px"
+      /></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -54,7 +55,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link h4" href="/" 
+            <a class="nav-link h4" href="/"
               >Eiga <span class="sr-only">(current)</span></a
             >
           </li>
@@ -96,51 +97,10 @@
     </nav>
 
     <main>
-
       <div class="d-flex justify-content-center flex-wrap" id="card-container">
-        <!-- Card Template -->
-        <div class="card m-2" style="width: 18rem">
-          <img
-            class="card-img-top"
-            src="/assets/background-images/Ghibli_Cagliostro_House_Background.png"
-            alt="Movie poster"
-          />
-          <div class="card-body">
-            <h5 class="card-title d-flex justify-content-center "><a href="/profile">Movie Title</a></h5>
-          </div>
-        </div>
-
-        <!-- Card Template -->
-        <div class="card m-2" style="width: 18rem">
-          <img
-            class="card-img-top"
-            src="/assets/background-images/Ghibli_Cagliostro_House_Background.png"
-            alt="Movie poster"
-          />
-          <div class="card-body">
-            <h5 class="card-title d-flex justify-content-center "><a href="/profile">Movie Title</a></h5>
-          </div>
-        </div>
-
-        <!-- Card Template -->
-        <div class="card m-2" style="width: 18rem">
-          <img
-            class="card-img-top"
-            src="/assets/background-images/Ghibli_Cagliostro_House_Background.png"
-            alt="Movie poster"
-          />
-          <div class="card-body">
-            <h5 class="card-title d-flex justify-content-center"><a href="/profile">Movie Title</a></h5>
-          </div>
-
-        </div>
+        <!-- This is were we will be generate movie cards -->
       </div>
     </main>
-
-
-      </div>
-    </main>
-
 
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -155,7 +115,6 @@
     <script src="/assets/script/homepage.js"></script>
   </body>
 </html>
-
 
 <!-- put code below in body tag if the dynamic background images don't work -->
 <!-- style="background-image: url('/assets/background-images/Ghibli_Island_Background.jpg'); background-repeat: no-repeat; background-size: cover;" -->
