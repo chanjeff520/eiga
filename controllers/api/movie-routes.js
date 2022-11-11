@@ -52,6 +52,19 @@ router.get('/:id/reviews', async (req,res) => {
 });
 //create a review for a single movie
 router.post('/:id/reviews', async (req,res) => {
+    try {
+        const reviewData = await Review.create(
+            //does not work
+            req.params.id,{
+               content:req.body.content,
+               user_id:req.body.user,
+               movie_id:req.body.movie
+            //author id
+            //movie id
+        });
+    } catch (err) {
+        
+    }
     console.log("create a review for a certain movie");
 });
 module.exports = router;
