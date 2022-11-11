@@ -1,7 +1,7 @@
 const { response } = require('express');
 const express = require('express')
 const router = require('express').Router();
-const { Movie } = require('../../models')
+const { Movie, Review } = require('../../models')
 
 //get all movies for movie page
 router.get('/', async (req, res ) => {
@@ -35,7 +35,20 @@ router.get('/:id', async (req, res ) => {
 
 //reviews of a single movie
 router.get('/:id/reviews', async (req,res) => {
-    console.log("a single movie with its associated reviews");
+    try {
+        const dbMovieData = await Movie.findByPk(
+            req.params.id, {
+                include: [{ model: Review }],
+            });
+        if ( !dbMovieData) {
+            res.status(404).json({message: 'No movie found with that id!' });
+            return;
+        }
+        res.status(200).json(dbMovieData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
 });
 //create a review for a single movie
 router.post('/:id/reviews', async (req,res) => {
