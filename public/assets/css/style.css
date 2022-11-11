@@ -1,16 +1,15 @@
 .ghibliBackGround{
-   background-image: url('../background-images/Ghibli_Cagliostro_House_Background.png');
-   background-image: url('../background-images/Ghibli_Farmland_Background.jpg');
-   background-image: url('../background-images/Ghibli_Forest_Background.jpg');
-   background-image: url('../background-images/Ghibli_God_Ray_Forest_Background.png');
-   /* background-image: url(../background-images/Ghibli_Farmland_Background.jpg);
-   background-image: url(../background-images/Ghibli_Forest_Background.jpg);
-   background-image: url(../background-images/Ghibli_God_Ray_Forest_Background.png);
-   background-image: url(../background-images/Ghibli_Howl_Castle_Alps_Background.jpg);
-   background-image: url(../background-images/Ghibli_Island_Background.jpg);
-   background-image: url(../background-images/Ghibli_Night_City_Background.jpg);
-   background-image: url(../background-images/Ghibli_Spirit_Away_Train_Background.png); */
+   width: auto;
+   height: auto;
+   background-repeat: no-repeat;
+   background-position: center;
    background-size: cover;
-}
+   height: 50;
+ }  
 
-/* background-repeat: no-repeat; background-size: cover */
+/* #background-slideshow {
+   transition: background 1.5s ease; 
+   background-position: center top, center top, center top; 
+   background-size: cover, cover, cover;
+   background-repeat:  no-repeat, no-repeat, no-repeat;
+   background-image: url(img/background-1.jpg), url(img/background-2.jpg), url(img/background-3.jpg); */
