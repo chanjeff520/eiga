@@ -10,7 +10,7 @@ User.hasMany(Review, {
 
 Review.belongsTo(User, {
   foreignKey: 'user_id',
-  OnDelete: 'CASCADE'
+  onDelete: 'CASCADE'
 });
 
 Review.belongsTo(Movie, {

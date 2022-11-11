@@ -3,7 +3,8 @@ const express = require('express')
 const router = require('express').Router();
 const { User } = require('../../models')
 
-//get all users
+//----get all users----
+//----api/user----
 router.get('/', async (req, res ) => {
     try {
         const dbUserData = await User.findAll()
@@ -21,6 +22,7 @@ router.get('/', async (req, res ) => {
 // })
 
 //create a user
+//----api/user----
 router.post('/', async (req, res ) => {
     try {
         const dbUserData = await User.create({
@@ -40,6 +42,7 @@ router.post('/', async (req, res ) => {
 });
 
 //user login
+//----api/user----
 router.post('/login', async (req, res) => {
     try {
         const dbUserData = await User.findOne({
@@ -70,6 +73,7 @@ router.post('/login', async (req, res) => {
 });
 
 //user logout
+//----api/user----
 router.post('/logout', async (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
