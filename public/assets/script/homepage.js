@@ -5,18 +5,18 @@
 
 function generateMovieCards(data) {
     //main Container
-    var mainContainer = document.getElementById("card-container")
+    const cardContainer = document.getElementById("card-container");
 
     //containers that need to be generated
-    var cardEl = document.createElement('div');
-    var cardImg = document.createElement('img');
-    var cardBody= document.createElement('div');
-    var cardTitle= document.createElement('h5');
-    var cardLink = document.createAttribute('a');
+    let cardEl = document.createElement('div');
+    let cardImg = document.createElement('img');
+    let cardBody= document.createElement('div');
+    let cardTitle= document.createElement('h5');
+    let cardLink = document.createElement('a');
 
     //cardEl attributes
     cardEl.setAttribute("class", "card m-2");
-    cardEl.setAttribute("style", "width: 18rem");
+    cardEl.setAttribute("style", "width: 16rem");
     //cardImg attributes
     cardImg.setAttribute("class", "card-img-top");
     cardImg.setAttribute("src", data[0].image);
@@ -25,9 +25,17 @@ function generateMovieCards(data) {
     cardBody.setAttribute("class", "card-body");
     //cardTitle attriubtes
     cardTitle.setAttribute("class", "card-title d-flex justify-content-center");
-    cardLink.setAttribute("href", `/movie/${1}`)
+    //cardLink Attributes
+    cardLink.textContent = data[0].title;
+    cardLink.setAttribute("href", `/movie/${1}`);
 
-    cardEl.appendChild()
+    //appending childs to approiate places
+    cardTitle.appendChild(cardLink);
+    cardBody.appendChild(cardTitle);
+    //appending to the card
+    cardEl.appendChild(cardImg); cardEl.appendChild(cardBody);
+    //appending to cardContainer
+    cardContainer.appendChild(cardEl);
 
 }
 
