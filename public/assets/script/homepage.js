@@ -3,20 +3,24 @@
 //get api
 //
 
-// const movieList = 
-
-// function generateMoviesByTitle() {
+function generateMovieCards() {
     
-// }
+}
 
 //basic of fetch requires
 fetch('/api/movie')
   .then((response) => response.json())
-  .then((data) => console.log(data));
+  .then((data) => generateMovieCards(data));
 
 
 
 console.log("MEOWWW")
+
+
+
+
+
+
 
 // Automatic Slideshow - change image every 20 second
 var myIndex = 0;
