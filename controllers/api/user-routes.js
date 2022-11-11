@@ -4,11 +4,15 @@ const router = require('express').Router();
 const { User } = require('../../models')
 
 //get all users
-// router.get('/', async (req, res ) => {
-//     res.send("get all users");
-//     console.log("get all users")
-
-// })
+router.get('/', async (req, res ) => {
+    try {
+        const dbUserData = await User.findAll()
+        res.status(200).json(dbUserData)
+    }catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    } 
+});
 
 // get a single user with their associated review
 // router.get('/:user_id/movies/review', async (req, res ) => {
