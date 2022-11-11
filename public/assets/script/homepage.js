@@ -3,8 +3,32 @@
 //get api
 //
 
-function generateMovieCards() {
-    
+function generateMovieCards(data) {
+    //main Container
+    var mainContainer = document.getElementById("card-container")
+
+    //containers that need to be generated
+    var cardEl = document.createElement('div');
+    var cardImg = document.createElement('img');
+    var cardBody= document.createElement('div');
+    var cardTitle= document.createElement('h5');
+    var cardLink = document.createAttribute('a');
+
+    //cardEl attributes
+    cardEl.setAttribute("class", "card m-2");
+    cardEl.setAttribute("style", "width: 18rem");
+    //cardImg attributes
+    cardImg.setAttribute("class", "card-img-top");
+    cardImg.setAttribute("src", data[0].image);
+    cardImg.setAttribute("alt", "Movie Poster");
+    //cardBody attributes
+    cardBody.setAttribute("class", "card-body");
+    //cardTitle attriubtes
+    cardTitle.setAttribute("class", "card-title d-flex justify-content-center");
+    cardLink.setAttribute("href", `/movie/${1}`)
+
+    cardEl.appendChild()
+
 }
 
 //basic of fetch requires
