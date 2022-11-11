@@ -5,23 +5,39 @@ const { User } = require('../../models')
 
 //get all users
 router.get('/', async (req, res ) => {
-    res.send("get all users");
-    console.log("get all users")
-
-})
+    try {
+        const dbUserData = await User.findAll()
+        res.status(200).json(dbUserData)
+    }catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    } 
+});
 
 // get a single user with their associated review
-router.get('/:user_id/movies/review', async (req, res ) => {
-    res.send("get a single user with their associated reviews");
-    console.log("get a single user with their associated reviews")
-})
+// router.get('/:user_id/movies/review', async (req, res ) => {
+//     res.send("get a single user with their associated reviews");
+//     console.log("get a single user with their associated reviews")
+// })
 
 //create a user
 router.post('/', async (req, res ) => {
-    res.send("create a user");
-    console.log("create a user")
-
-})
+    try {
+        const dbUserData = await User.create({
+            username: req.body.username,
+            password: req.body.password,
+        });
+        
+        req.session.save(() => {
+        req.session.loggedIn = true;
+        
+          res.status(200).json(dbUserData)
+          });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+    }
+});
 
 //user login
 router.post('/login', async (req, res) => {
@@ -51,8 +67,6 @@ router.post('/login', async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     }
-    // res.send("login");
-    // console.log("login")
 });
 
 //user logout
@@ -65,9 +79,6 @@ router.post('/logout', async (req, res) => {
             res.status(404).end();
         }
     });
-    // res.send("logout");
-    // console.log("logout")
-
 
 
 
