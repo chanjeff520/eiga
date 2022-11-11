@@ -18,7 +18,7 @@ fetch('/api/movie')
 
 console.log("MEOWWW")
 
-// Automatic Slideshow - change image every 20 seconds
+// Automatic Slideshow - change image every 20 second
 var myIndex = 0;
 carousel();
 
@@ -30,6 +30,7 @@ function carousel() {
   }
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
+  x[myIndex-1].style.display = "block"; 
+  console.log("22") 
   setTimeout(carousel, 3000);    
 }
