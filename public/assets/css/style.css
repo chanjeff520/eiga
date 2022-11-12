@@ -1,4 +1,4 @@
- .ghibliBackGround{
+ /* .ghibliBackGround{ */
    /* z-index: -99; */
    /* background-image: url('../background-images/Ghibli_Cagliostro_House_Background.png');
    background-image: url('../background-images/Ghibli_Farmland_Background.jpg');
@@ -11,7 +11,9 @@
    background-image: url(../background-images/Ghibli_Island_Background.jpg);
    background-image: url(../background-images/Ghibli_Night_City_Background.jpg);
    background-image: url(../background-images/Ghibli_Spirit_Away_Train_Background.png); */ 
-    background-size: cover; 
-} 
+    /* background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat; */
+/* }  */
 
 /* background-repeat: no-repeat; background-size: cover */
