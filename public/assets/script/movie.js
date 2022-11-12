@@ -6,7 +6,7 @@ var movieData;
 
 
 async function getMovieData(){
-  const res = await fetch(`/api/movie/${window.location.href.split('movie/')[1]}/review`)
+  const res = await fetch(`/api/movie/${window.location.href.split('movie/')[1]}`)
   const data = await res.json()
   console.log(data);
   generateLeftSide(data);
@@ -28,6 +28,7 @@ function generateLeftSide(data){
   let filmTitle = document.createElement('h2');
   filmTitle.setAttribute('class', 'ml-5');
   filmTitle.textContent = data.title;
+  console.log(data.title)
   divEl.appendChild(filmTitle);
   //for movie image under title
   const imgCont = document.getElementById('imgCont');
@@ -36,3 +37,5 @@ function generateLeftSide(data){
   filmImage.setAttribute('src', data.image);
   imgCont.appendChild(filmImage);
 }
+
+generateLeftSide();
