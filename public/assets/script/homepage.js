@@ -1,18 +1,17 @@
-
 //dynically generate
 //get api
 //
 
 function generateMovieCards(data) {
-    //main Container
-    const cardContainer = document.getElementById("card-container");
+  //main Container
+  const cardContainer = document.getElementById("card-container");
 
-    for(let i=0; i< data.length; i++){
+  for (let i = 0; i < data.length; i++) {
     //containers that need to be generated
     let cardEl = document.createElement('div');
     let cardImg = document.createElement('img');
-    let cardBody= document.createElement('div');
-    let cardTitle= document.createElement('h5');
+    let cardBody = document.createElement('div');
+    let cardTitle = document.createElement('h5');
     let cardLink = document.createElement('a');
 
     //cardEl attributes
@@ -35,11 +34,12 @@ function generateMovieCards(data) {
     cardTitle.appendChild(cardLink);
     cardBody.appendChild(cardTitle);
     //appending to the card
-    cardEl.appendChild(cardImg); cardEl.appendChild(cardBody);
+    cardEl.appendChild(cardImg);
+    cardEl.appendChild(cardBody);
     //appending to cardContainer
     cardContainer.appendChild(cardEl);
 
-    }
+  }
 
 }
 
@@ -60,7 +60,9 @@ console.log("MEOWWW")
 
 // Automatic Slideshow - change image every 20 second
 
-// let ghibliArray = ["/assets/background-images/Ghibli_Cagliostro_House_Background.png", "/assets/background-images/Ghibli_Farmland_Background.jpg", "/assets/background-images/Ghibli_Forest_Background.jpg", "/assets/background-images/Ghibli_God_Ray_Forest_Background.png", "/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg", "/assets/background-images/Ghibli_Island_Background.jpg", "/assets/background-images/Ghibli_Night_City_Background.jpg", "/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"]
+let ghibliArray = ["/assets/background-images/Ghibli_Cagliostro_House_Background.png", "/assets/background-images/Ghibli_Farmland_Background.jpg", "/assets/background-images/Ghibli_Forest_Background.jpg", "/assets/background-images/Ghibli_God_Ray_Forest_Background.png", "/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg", "/assets/background-images/Ghibli_Island_Background.jpg", "/assets/background-images/Ghibli_Night_City_Background.jpg", "/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"]
+
+let body = document.querySelector("body")
 
 var myIndex = 0;
 carousel();
@@ -73,7 +75,28 @@ function carousel() {
   }
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block"; 
+  // x[myIndex-1].style.display = "block"; 
+  body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
   console.log("22") 
   setTimeout(carousel, 3000);    
 }
+
+// function changeimage(every_seconds) {
+//   //change the image
+//   if (!imageID) {
+//     document.getElementById("myimage").src ="/assets/background-images/Ghibli_Cagliostro_House_Background.png";
+//     imageID++;
+//   } else {
+//     if (imageID == 1) {
+//       document.getElementById("myimage").src = "/assets/background-images/Ghibli_Farmland_Background.jpg";
+//       imageID++;
+//     } else {
+//       if (imageID == 2) {
+//         document.getElementById("myimage").src = "/assets/background-images/Ghibli_Forest_Background.jpg";
+//         imageID = 0;
+//       }
+//     }
+//   }
+//   //call same function again for x of seconds
+//   setTimeout("changeimage(" + every_seconds + ")", ((every_seconds) * 1000));
+// }
