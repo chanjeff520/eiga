@@ -60,43 +60,43 @@ console.log("MEOWWW")
 
 // Automatic Slideshow - change image every 20 second
 
-// let ghibliArray = ["/assets/background-images/Ghibli_Cagliostro_House_Background.png", "/assets/background-images/Ghibli_Farmland_Background.jpg", "/assets/background-images/Ghibli_Forest_Background.jpg", "/assets/background-images/Ghibli_God_Ray_Forest_Background.png", "/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg", "/assets/background-images/Ghibli_Island_Background.jpg", "/assets/background-images/Ghibli_Night_City_Background.jpg", "/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"]
+let ghibliArray = ["/assets/background-images/Ghibli_Cagliostro_House_Background.png", "/assets/background-images/Ghibli_Farmland_Background.jpg", "/assets/background-images/Ghibli_Forest_Background.jpg", "/assets/background-images/Ghibli_God_Ray_Forest_Background.png", "/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg", "/assets/background-images/Ghibli_Island_Background.jpg", "/assets/background-images/Ghibli_Night_City_Background.jpg", "/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"]
 
-// let body = document.querySelector("body")
+let body = document.querySelector("body")
 
-// var myIndex = 0;
-// carousel();
+var myIndex = 0;
+carousel();
 
-// function carousel() {
-//   var i;
-//   var x = document.getElementsByClassName("ghibliBackGround");
-//   for (i = 0; i < x.length; i++) {
-//     x[i].style.display = "none";  
-//   }
-//   myIndex++;
-//   if (myIndex > x.length) {myIndex = 1}    
-//   // x[myIndex-1].style.display = "block"; 
-//   body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
-//   console.log("22") 
-//   setTimeout(carousel, 3000);    
-// }
-
-function changeimage(every_seconds) {
-  //change the image
-  if (!imageID) {
-    document.getElementById("myimage").src = "http://www.all-freeware.com/images/full/38943-nice_feathers_free_screensaver_desktop_screen_savers__nature.jpeg";
-    imageID++;
-  } else {
-    if (imageID == 1) {
-      document.getElementById("myimage").src = "http://www.hickerphoto.com/data/media/186/flower-bouquet-nice_12128.jpg";
-      imageID++;
-    } else {
-      if (imageID == 2) {
-        document.getElementById("myimage").src = "http://www.photos.a-vsp.com/fotodb/14_green_cones.jpg";
-        imageID = 0;
-      }
-    }
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("ghibliBackGround");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
   }
-  //call same function again for x of seconds
-  setTimeout("changeimage(" + every_seconds + ")", ((every_seconds) * 1000));
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  // x[myIndex-1].style.display = "block"; 
+  body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
+  console.log("22") 
+  setTimeout(carousel, 3000);    
 }
+
+// function changeimage(every_seconds) {
+//   //change the image
+//   if (!imageID) {
+//     document.getElementById("myimage").src ="/assets/background-images/Ghibli_Cagliostro_House_Background.png";
+//     imageID++;
+//   } else {
+//     if (imageID == 1) {
+//       document.getElementById("myimage").src = "/assets/background-images/Ghibli_Farmland_Background.jpg";
+//       imageID++;
+//     } else {
+//       if (imageID == 2) {
+//         document.getElementById("myimage").src = "/assets/background-images/Ghibli_Forest_Background.jpg";
+//         imageID = 0;
+//       }
+//     }
+//   }
+//   //call same function again for x of seconds
+//   setTimeout("changeimage(" + every_seconds + ")", ((every_seconds) * 1000));
+// }
