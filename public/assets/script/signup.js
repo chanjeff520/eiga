@@ -1,11 +1,13 @@
-
-
-
-async function signupHandler(event){
+const signupHandler= async (event) => {
+    //event.stopImmediatePropagation();
     event.preventDefault();
+    event.stopPropagation()
+    console.log("crap")
 
-    const username = document.getElementById('userSignupInput')
-    const password = document.getElementById('passwordSignupInput')
+    const username = document.getElementById('username-input').value.trim()
+    const password = document.getElementById('password-input').value.trim()
+
+    console.log(username, password)
 
     if(username && password){
         const response = await fetch('/api/users', {
@@ -14,8 +16,10 @@ async function signupHandler(event){
             headers: {'Content-Type': 'application/json'},
         });
 
-        if(response.okay) {
-            //document.location.replace()
+        if(response.ok) {
+            //document.location.replace();
+            //document.location.replace('/profile');
+            console.log(response);
         }else{
             alert(response.statusText);
         }
