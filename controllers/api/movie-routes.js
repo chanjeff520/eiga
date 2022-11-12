@@ -37,7 +37,7 @@ router.get('/:id', async (req, res ) => {
 
 //reviews of a single movie
 //----api/movie----
-router.get('/:id/reviews', async (req,res) => {
+router.get('/:id/review', async (req,res) => {
     try {
         const dbMovieData = await Movie.findByPk(
             req.params.id, {
@@ -55,13 +55,14 @@ router.get('/:id/reviews', async (req,res) => {
 });
 //create a review for a single movie
 //----api/movie----
-router.post('/:id/reviews', async (req,res) => {
+router.post('/:id/review', async (req,res) => {
     try {
         //if statement for empty field(put in public js page)
         const reviewData = await Review.create({
                content: req.body.content,
                user_id: req.body.user_id,
-               movie_id: req.body.movie_id
+               movie_id: req.body.movie_id,
+               title: req.body.title
 
         });
         res.status(200).json(reviewData)
