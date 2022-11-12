@@ -15,11 +15,16 @@ router.get('/', async (req, res ) => {
     } 
 });
 
-// get a single user with their associated review
-// router.get('/:user_id/movies/review', async (req, res ) => {
-//     res.send("get a single user with their associated reviews");
-//     console.log("get a single user with their associated reviews")
-// })
+// get user by specific id
+router.get('/:id', async (req, res) => {
+    try {
+        const dbUserData = await User.findByPk(req.params.id)
+        res.status(200).json(dbUserData)
+    }catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
 
 //create a user
 //----api/user----
@@ -83,6 +88,9 @@ router.post('/logout', async (req, res) => {
             res.status(404).end();
         }
     });
+
+
+
 
 
 
