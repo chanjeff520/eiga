@@ -6,7 +6,7 @@ var movieData;
 
 
 async function getMovieData(){
-  const res = await fetch(`/api/movie/${window.location.href.split('movie/')[1]}`)
+  const res = await fetch(`/api/movie/${window.location.href.split('movie/')[1]}/review`)
   const data = await res.json()
   console.log(data);
   generateLeftSide(data);
