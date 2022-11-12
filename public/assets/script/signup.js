@@ -1,8 +1,5 @@
 const signupHandler= async (event) => {
-    //event.stopImmediatePropagation();
     event.preventDefault();
-    event.stopPropagation()
-    console.log("crap")
 
     const username = document.getElementById('username-input').value.trim()
     const password = document.getElementById('password-input').value.trim()
@@ -10,7 +7,7 @@ const signupHandler= async (event) => {
     console.log(username, password)
 
     if(username && password){
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/user', {
             method: 'POST',
             body: JSON.stringify({username, password}),
             headers: {'Content-Type': 'application/json'},
@@ -26,4 +23,4 @@ const signupHandler= async (event) => {
     }
 };
 
-document.querySelector('.signup-form').addEventListener('sumbit', signupHandler);
+document.querySelector('.signup-form').addEventListener('submit', signupHandler);
