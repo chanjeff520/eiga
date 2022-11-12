@@ -28,6 +28,7 @@ function generateLeftSide(data){
   let filmTitle = document.createElement('h2');
   filmTitle.setAttribute('class', 'ml-5');
   filmTitle.textContent = data.title;
+  console.log(data.title)
   divEl.appendChild(filmTitle);
   //for movie image under title
   const imgCont = document.getElementById('imgCont');
@@ -36,3 +37,5 @@ function generateLeftSide(data){
   filmImage.setAttribute('src', data.image);
   imgCont.appendChild(filmImage);
 }
+
+generateLeftSide();
