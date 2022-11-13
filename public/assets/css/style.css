@@ -1,3 +1,9 @@
+@font-face {
+    src: url(./Bangers-Regular.ttf);
+    font-family: 'Bangers';
+}
+ 
+ 
  .ghibliBackGround{
     background-position: center; 
     background-repeat: no-repeat;
@@ -6,6 +12,25 @@
 
 h1{
 font-family: 'Bangers';
+color: green;
+text-align: center;
 }
 
+p, .userfont {
+    font-family: 'Bangers';
+    color: green;
+}
+
+.topBar {
+}
+
+.images {
+    width: 5px;
+    height: 2px;
+}
+
+
+.navbar {
+    text-align: center;
+}
 /* background-repeat: no-repeat; background-size: cover */
