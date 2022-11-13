@@ -1,8 +1,6 @@
-const { create } = require("../../../models/User");
+//const { create } = require("../../../models/User");
 
-var movieData;
-
-
+//var movieData;
 //get movie id number into string literal
 
 
@@ -13,8 +11,6 @@ async function getMovieData(){
   generateLeftSide(data);
   generateRightSide(data);
 }
-
-getMovieData();
 
 /*
 async function getReviewData(){
@@ -45,17 +41,17 @@ function generateLeftSide(data){
 function generateRightSide(data){
   const reviewCardContainer = document.getElementById('review-section');
 
-  for(let i=0; i<data.review.length; i++){
+  for(let i=0; i<data.reviews.length; i++){
     //for the review card
     let reviewCard = document.createElement('div');
-    reviewCard.setAttribute('class', 'border border-dark rounded');
+    reviewCard.setAttribute('class', 'border border-dark rounded mt-1');
 
     //for the title row
     let titleDiv = document.createElement('div');
     let titleEl = document.createElement('h3');
     titleDiv.setAttribute('class', 'row');
-    titleEl = document.setAttribute('class', 'ml-5');
-    titleEl.textContent = data.review[i].title;
+    titleEl.setAttribute('class', 'ml-5');
+    titleEl.textContent = data.reviews[i].title;
 
     //for the content of inside the review row
     let reviewDiv = document.createElement('div');
@@ -64,7 +60,7 @@ function generateRightSide(data){
     reviewDiv.setAttribute('class', 'row');
     //contentContainer.setAttribute('class', 'border border-dark rounded')
     content.setAttribute('class', 'ml-4');
-    content.textContent = data.review[i].content;
+    content.textContent = data.reviews[i].content;
 
     /*  Appending  */
     //appending title 
@@ -79,4 +75,4 @@ function generateRightSide(data){
   }
 }
 
-generateLeftSide();
+getMovieData();
