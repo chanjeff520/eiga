@@ -88,7 +88,22 @@ const makeReviewHandler = async (e) => {
   const title = document.getElementById('title-modal').value.trim();
   const content = document.getElementById('content-modal').value.trim();
   let movie_id = window.location.href.split('movie/')[1];
-  let user_id = (await fetch(`/api/user/${data.reviews[i].user_id}`)).json().id;
+
+  if(title && content){
+    const response = await fetch(`api/movie/${movie_id}/review`, {
+      method: 'POST',
+      body: JSON.stringify({title, content, movie_id}),
+      headers: {'Content-Type': 'application/json'}
+    });
+
+    if(response.ok) {
+      document.location.replace(`/movie/${movie_id}`)
+    }else{
+      alert(response.statusText);
+    }
+  }else{
+    alert("No input for title or content!");
+  }
 
 
 

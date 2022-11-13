@@ -20,6 +20,8 @@ const signupHandler= async (event) => {
         }else{
             alert(response.statusText);
         }
+    }else{
+        alert("No username or password inputted!!")
     }
 };
 
