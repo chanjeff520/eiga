@@ -3,6 +3,10 @@
     background-position: center; 
     background-repeat: repeat;
     ;
-}  
+}
+
+h1{
+font-family: 'Bangers';
+}
 
 /* background-repeat: no-repeat; background-size: cover */

@@ -93,9 +93,9 @@ function carousel() {
   }
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}    
-  // x[myIndex-1].style.display = "block"; 
-  body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
-  console.log("22") 
+  x[myIndex-1].style.display = "block"; 
+  // body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
+  // console.log("22") 
   setTimeout(carousel, 3000);    
 }
 
