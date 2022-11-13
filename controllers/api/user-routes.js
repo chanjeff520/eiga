@@ -28,7 +28,11 @@ router.get('/:id', async (req, res) => {
 
 //create a user
 //----api/user----
-router.post('/', async (req, res ) => {
+router.post('/signup', async (req, res ) => {
+    console.log(req.body)
+    if (req.body.password !== req.body.confirmPassword) {
+        res.status(400).send("password not right")
+    }
     try {
         const dbUserData = await User.create({
             username: req.body.username,
@@ -36,9 +40,12 @@ router.post('/', async (req, res ) => {
         });
         
         req.session.save(() => {
-            req.session.user_id = dbUserData.id;
+            req.session.id = dbUserData.id;
+            req.session.username = dbUserData.username;
             req.session.loggedIn = true;
-            
+            req.session.cookie.expires = new Date(Date.now() + 3600000)
+            req.session.cookie.maxAge = 3600000
+            console.log(req.session)
             res.status(200).json(dbUserData)
         });
     } catch (err) {
@@ -69,10 +76,12 @@ router.post('/login', async (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.user_id = dbUserData.id;
+            req.session.id = dbUserData.id;
             req.session.loggedIn = true;
-            res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
+            req.session.cookie.expires = new Date(Date.now() + 3600000)
+            req.session.cookie.maxAge = 3600000
         });
+        res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -84,9 +93,13 @@ router.post('/login', async (req, res) => {
 router.post('/logout', async (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
-            res.status(204).end();
+            req.session.id = null
+            req.session.user = null
+            req.session.loggedIn = false
         });
-        } else {
+        console.log(req.session)
+        res.status(204).end();
+    } else {
             res.status(404).end();
         }
     });
