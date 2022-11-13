@@ -60,7 +60,7 @@ router.post('/:id/review', async (req,res) => {
         //if statement for empty field(put in public js page)
         const reviewData = await Review.create({
                content: req.body.content,
-               user_id: req.session.user_id,
+               user_id: req.session.user_id,  //using session instead of req.body.user_id. Not sure if this work yet
                movie_id: req.body.movie_id,
                title: req.body.title
 

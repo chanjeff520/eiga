@@ -81,7 +81,7 @@ async function generateRightSide(data){
   }
 }
 
-
+//haven't test this yet
 const makeReviewHandler = async (e) => {
   e.preventDefault();
 
@@ -104,12 +104,6 @@ const makeReviewHandler = async (e) => {
   }else{
     alert("No input for title or content!");
   }
-
-
-
-
-
-
 
 }
 

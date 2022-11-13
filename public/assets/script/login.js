@@ -20,7 +20,9 @@ const loginFormHandler = async (event) => {
           } else {
             alert(response.statusText);
         }
-    } 
+    } else {
+        alert("Username or password invalid!");
+    }
 };
 
 
