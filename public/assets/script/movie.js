@@ -11,7 +11,7 @@ async function getMovieData(){
   const data = await res.json()
   console.log(data);
   generateLeftSide(data);
-  
+  generateRightSide(data);
 }
 
 getMovieData();
@@ -62,8 +62,20 @@ function generateRightSide(data){
     let contentContainer = document.createElement('div');
     let content = document.createElement('p');
     reviewDiv.setAttribute('class', 'row');
-    contentContainer.setAttribute('class', 'border border-dark rounded')
+    //contentContainer.setAttribute('class', 'border border-dark rounded')
+    content.setAttribute('class', 'ml-4');
+    content.textContent = data.review[i].content;
 
+    /*  Appending  */
+    //appending title 
+    titleDiv.appendChild(titleEl);
+    //appending content
+    contentContainer.appendChild(content); 
+    reviewDiv.appendChild(contentContainer);
+    //appending to reviewCard
+    reviewCard.appendChild(titleDiv); reviewCard.appendChild(reviewDiv);
+    //appending everything to the reviewCardContainer
+    reviewCardContainer.appendChild(reviewCard);
   }
 }
 
