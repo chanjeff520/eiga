@@ -68,13 +68,6 @@ fetch('/api/movie')
 
 
 
-console.log("MEOWWW")
-
-
-
-
-
-
 
 // // Automatic Slideshow - change image every 20 second
 
