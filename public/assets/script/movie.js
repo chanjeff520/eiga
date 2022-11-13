@@ -54,7 +54,7 @@ async function generateRightSide(data){
 
     //for the title row
     let titleDiv = document.createElement('div');
-    let titleEl = document.createElement('h3');
+    let titleEl = document.createElement('h4');
     titleDiv.setAttribute('class', 'row');
     titleEl.setAttribute('class', 'ml-5');
     titleEl.textContent = data.reviews[i].title + " By " + userData.username;
