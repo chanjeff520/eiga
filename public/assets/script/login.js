@@ -4,6 +4,7 @@ const loginFormHandler = async (event) => {
     //get values
     const username = document.getElementById('userLoginInput').value;
     const password = document.getElementById('userPasswordInput').value;
+    
 
 
     if (username && password) {
