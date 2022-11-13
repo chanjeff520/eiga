@@ -12,13 +12,13 @@ async function getMovieData(){
   generateRightSide(data);
 }
 
+//fetch the user author
 /*
-async function getReviewData(){
-  const res = await fetch(`/api/user/${movieData.review[0].user_id}`)
+async function getReviewData(data, count){
+  const res = await fetch(`/api/user/${data.review[count].user_id}`)
   const data = await res.json()
   console.log(data)
 }
-
 getReviewData();
 */
 
@@ -80,5 +80,24 @@ async function generateRightSide(data){
     reviewCardContainer.appendChild(reviewCard);
   }
 }
+
+
+const makeReviewHandler = async (e) => {
+  e.preventDefault();
+
+  const title = document.getElementById('title-modal').value.trim();
+  const content = document.getElementById('content-modal').value.trim();
+  let movie_id = window.location.href.split('movie/')[1];
+  let user_id = (await fetch(`/api/user/${data.reviews[i].user_id}`)).json().id;
+
+
+
+
+
+
+
+}
+
+document.getElementById('post-modal').addEventListener('click', makeReviewHandler);
 
 getMovieData();
