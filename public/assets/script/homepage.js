@@ -94,10 +94,13 @@ function carousel() {
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}    
   x[myIndex-1].style.display = "block"; 
-  // body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
+  body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
   // console.log("22") 
   setTimeout(carousel, 3000);    
 }
+
+
+// timer try 1
 
 // function changeimage(every_seconds) {
 //   //change the image
@@ -118,3 +121,37 @@ function carousel() {
 //   //call same function again for x of seconds
 //   setTimeout("changeimage(" + every_seconds + ")", ((every_seconds) * 1000));
 // }
+
+
+// timer 2 try
+
+// window.onload = function () {
+
+//   function Timer() {
+//     window.setInterval("changeImage()", 5000);
+//   }
+
+//   function changeImage() {   
+//     var BackgroundImg["./Ghibli_Cagliostro_House_Background.png",
+//                       "./Img/Bg2.jpg",
+//                       "./Img/Bg3.jpg",
+//                       "./Img/Bg4.jpg"];
+//     var i = Math.floor((Math.random() * 3));
+//     var bgImg = document.body.style.backgroundImage();
+//     bgImg.url = BackgroundImg[i];
+//   }
+// }
+
+// let images = ['/assets/background-images/Ghibli_Cagliostro_House_Background.png', '/assets/background-images/Ghibli_Farmland_Background.jpg', '/assets/background-images/Ghibli_Forest_Background.jpg'];
+
+// let index = 0;
+// const imgElement = document.querySelector('.ghibliBackGround');
+
+// function change() {
+//    imgElement.src = images[index];
+//    index > 1 ? index = 0 : index++;
+// }
+
+// window.onload = function () {
+//     setInterval(change, 5000);
+// };
