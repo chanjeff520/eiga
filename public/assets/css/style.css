@@ -4,11 +4,11 @@
 }
  
  
- .ghibliBackGround{
+ /* .ghibliBackGround{
     background-position: center; 
     background-repeat: no-repeat;
     ;
-}
+} */
 
 h1{
 font-family: 'Bangers';
@@ -24,10 +24,10 @@ p, .userfont {
 .topBar {
 }
 
-.images {
-    width: 5px;
-    height: 2px;
-}
+/* .images {
+    width: auto;
+    height: auto;
+} */
 
 
 .navbar {
