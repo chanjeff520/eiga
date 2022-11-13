@@ -12,13 +12,13 @@ async function getMovieData(){
   generateRightSide(data);
 }
 
+//fetch the user author
 /*
-async function getReviewData(){
-  const res = await fetch(`/api/user/${movieData.review[0].user_id}`)
+async function getReviewData(data, count){
+  const res = await fetch(`/api/user/${data.review[count].user_id}`)
   const data = await res.json()
   console.log(data)
 }
-
 getReviewData();
 */
 
@@ -79,6 +79,17 @@ async function generateRightSide(data){
     //appending everything to the reviewCardContainer
     reviewCardContainer.appendChild(reviewCard);
   }
+}
+
+const makeReviewHandler = async (e) => {
+  e.preventDefault();
+
+  const title = document.getElementById('title-modal').value.trim();
+  const content = document.getElementById('content-modal').value.trim();
+
+
+
+
 }
 
 getMovieData();
