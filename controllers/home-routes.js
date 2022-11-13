@@ -5,12 +5,20 @@ const path = require('path')
 //----All movies page----
 router.get('/', async (req, res) => {
     try {
-        res.status(200).sendFile(path.join(__dirname,'../views/dashboard.html'));
-        console.log("This is Home Page");
+        if (req.session.loggedIn == false) {
+            //else redirect to login page
+            res.status(200).sendFile(path.join(__dirname,'../views/login.html'));
+            console.log("This is not logged in page")
+        } else {
+            //if logged in do this work
+            res.status(200).sendFile(path.join(__dirname,'../views/dashboard.html'));
+            console.log("This is Logged in Home Page");
+        }
     } catch (error) {
         res.status(500).json(error)
     }
 });
+//condition for login
 
 //from mini-project 
 //If the user is already logged in, redirect the request to another route
