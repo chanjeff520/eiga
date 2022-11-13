@@ -5,7 +5,7 @@ const path = require('path')
 //----All movies page----
 router.get('/', async (req, res) => {
     try {
-        res.status(200).sendFile(path.join(__dirname,'../views/index.html'));
+        res.status(200).sendFile(path.join(__dirname,'../views/dashboard.html'));
         console.log("This is Home Page");
     } catch (error) {
         res.status(500).json(error)
