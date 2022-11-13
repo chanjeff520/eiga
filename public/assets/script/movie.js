@@ -81,15 +81,23 @@ async function generateRightSide(data){
   }
 }
 
+
 const makeReviewHandler = async (e) => {
   e.preventDefault();
 
   const title = document.getElementById('title-modal').value.trim();
   const content = document.getElementById('content-modal').value.trim();
+  let movie_id = window.location.href.split('movie/')[1];
+  let user_id = (await fetch(`/api/user/${data.reviews[i].user_id}`)).json().id;
+
+
+
 
 
 
 
 }
+
+document.getElementById('post-modal').addEventListener('click', makeReviewHandler);
 
 getMovieData();
