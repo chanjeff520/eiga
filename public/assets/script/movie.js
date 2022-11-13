@@ -38,10 +38,16 @@ function generateLeftSide(data){
   imgCont.appendChild(filmImage);
 }
 
-function generateRightSide(data){
+async function generateRightSide(data){
   const reviewCardContainer = document.getElementById('review-section');
 
   for(let i=0; i<data.reviews.length; i++){
+
+    //fetch the author
+    const res = await fetch(`/api/user/${data.reviews[i].user_id}`)
+    const userData = await res.json();
+    console.log(userData);
+    
     //for the review card
     let reviewCard = document.createElement('div');
     reviewCard.setAttribute('class', 'border border-dark rounded mt-1');
@@ -51,7 +57,7 @@ function generateRightSide(data){
     let titleEl = document.createElement('h3');
     titleDiv.setAttribute('class', 'row');
     titleEl.setAttribute('class', 'ml-5');
-    titleEl.textContent = data.reviews[i].title;
+    titleEl.textContent = data.reviews[i].title + " By " + userData.username;
 
     //for the content of inside the review row
     let reviewDiv = document.createElement('div');
