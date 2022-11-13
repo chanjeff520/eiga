@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            window.location = "profile.html"; // Redirecting to other page.
+            window.location = "dashboard.html"; // Redirecting to other page.
             console.log(response);
           } else {
             alert(response.statusText);
