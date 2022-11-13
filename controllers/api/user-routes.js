@@ -28,7 +28,11 @@ router.get('/:id', async (req, res) => {
 
 //create a user
 //----api/user----
-router.post('/', async (req, res ) => {
+router.post('/register', async (req, res ) => {
+    console.log(req.body)
+    if (req.body.password !== req.body.confirmPassword) {
+        res.status(400).send("password not right")
+    }
     try {
         const dbUserData = await User.create({
             username: req.body.username,
@@ -38,7 +42,7 @@ router.post('/', async (req, res ) => {
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
             req.session.loggedIn = true;
-            
+            console.log(req.session)
             res.status(200).json(dbUserData)
         });
     } catch (err) {
