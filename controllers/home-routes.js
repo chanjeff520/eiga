@@ -11,6 +11,17 @@ router.get('/', async (req, res) => {
         res.status(500).json(error)
     }
 });
+
+// If the user is already logged in, redirect the request to another route
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/profile');
+      return;
+    }
+  
+    res.render('login');
+  });
+  
 //----Login----
 router.get('/login', async (req, res) => {
     try {
@@ -27,6 +38,16 @@ router.get('/signup', async (req, res) => {
         res.status(500).json(error)
     }
 });
+
+//----all movies----
+router.get('/movie/', async (req, res) => {
+    try {
+        res.status(200).sendFile(path.join(__dirname,'../views/movie.html' ))
+    } catch (error) {
+        res.status(500).json(error)
+    }
+});
+
 //----single movie----
 router.get('/movie/:id', async (req, res) => {
     try {
