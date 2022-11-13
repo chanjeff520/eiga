@@ -23,6 +23,7 @@ const loginFormHandler = async (event) => {
     } 
 };
 
+
 let ghibliArray = ["/assets/background-images/Ghibli_Cagliostro_House_Background.png", "/assets/background-images/Ghibli_Farmland_Background.jpg", "/assets/background-images/Ghibli_Forest_Background.jpg", "/assets/background-images/Ghibli_God_Ray_Forest_Background.png", "/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg", "/assets/background-images/Ghibli_Island_Background.jpg", "/assets/background-images/Ghibli_Night_City_Background.jpg", "/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"]
 
 let body = document.querySelector("body")
@@ -44,4 +45,5 @@ function carousel() {
   setTimeout(carousel, 3000);    
 }
 
-document.querySelector('.login-form').addEventListener('submit',loginFormHandler)
+
+document.getElementById('logInButton').addEventListener('click',loginFormHandler)
