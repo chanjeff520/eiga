@@ -15,9 +15,13 @@ p, .userfont {
     color: green;
 }
 
-.topBar {
-}
+/* .topBar {
+} */
 
+.ghibliBackGround{
+    background-position: center;
+
+}
 /* .images {
     width: auto;
     height: auto;
