@@ -76,82 +76,25 @@ console.log("MEOWWW")
 
 
 
-// Automatic Slideshow - change image every 20 second
+// // Automatic Slideshow - change image every 20 second
 
-let ghibliArray = ["/assets/background-images/Ghibli_Cagliostro_House_Background.png", "/assets/background-images/Ghibli_Farmland_Background.jpg", "/assets/background-images/Ghibli_Forest_Background.jpg", "/assets/background-images/Ghibli_God_Ray_Forest_Background.png", "/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg", "/assets/background-images/Ghibli_Island_Background.jpg", "/assets/background-images/Ghibli_Night_City_Background.jpg", "/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"]
+// let ghibliArray = ["/assets/background-images/Ghibli_Cagliostro_House_Background.png", "/assets/background-images/Ghibli_Farmland_Background.jpg", "/assets/background-images/Ghibli_Forest_Background.jpg", "/assets/background-images/Ghibli_God_Ray_Forest_Background.png", "/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg", "/assets/background-images/Ghibli_Island_Background.jpg", "/assets/background-images/Ghibli_Night_City_Background.jpg", "/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"]
 
-let body = document.querySelector("body")
+// let body = document.querySelector("body")
 
-var myIndex = 0;
-carousel();
+// var myIndex = 0;
+// carousel();
 
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("ghibliBackGround");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block"; 
-  body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
-  // console.log("22") 
-  setTimeout(carousel, 3000);    
-}
-
-
-// timer try 1
-
-// function changeimage(every_seconds) {
-//   //change the image
-//   if (!imageID) {
-//     document.getElementById("myimage").src ="/assets/background-images/Ghibli_Cagliostro_House_Background.png";
-//     imageID++;
-//   } else {
-//     if (imageID == 1) {
-//       document.getElementById("myimage").src = "/assets/background-images/Ghibli_Farmland_Background.jpg";
-//       imageID++;
-//     } else {
-//       if (imageID == 2) {
-//         document.getElementById("myimage").src = "/assets/background-images/Ghibli_Forest_Background.jpg";
-//         imageID = 0;
-//       }
-//     }
+// function carousel() {
+//   var i;
+//   var x = document.getElementsByClassName("ghibliBackGround");
+//   for (i = 0; i < x.length; i++) {
+//     x[i].style.display = "none";  
 //   }
-//   //call same function again for x of seconds
-//   setTimeout("changeimage(" + every_seconds + ")", ((every_seconds) * 1000));
+//   myIndex++;
+//   if (myIndex > x.length) {myIndex = 1}    
+//   x[myIndex-1].style.display = "block"; 
+//   body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
+//   // console.log("22") 
+//   setTimeout(carousel, 3000);    
 // }
-
-
-// timer 2 try
-
-// window.onload = function () {
-
-//   function Timer() {
-//     window.setInterval("changeImage()", 5000);
-//   }
-
-//   function changeImage() {   
-//     var BackgroundImg["./Ghibli_Cagliostro_House_Background.png",
-//                       "./Img/Bg2.jpg",
-//                       "./Img/Bg3.jpg",
-//                       "./Img/Bg4.jpg"];
-//     var i = Math.floor((Math.random() * 3));
-//     var bgImg = document.body.style.backgroundImage();
-//     bgImg.url = BackgroundImg[i];
-//   }
-// }
-
-// let images = ['/assets/background-images/Ghibli_Cagliostro_House_Background.png', '/assets/background-images/Ghibli_Farmland_Background.jpg', '/assets/background-images/Ghibli_Forest_Background.jpg'];
-
-// let index = 0;
-// const imgElement = document.querySelector('.ghibliBackGround');
-
-// function change() {
-//    imgElement.src = images[index];
-//    index > 1 ? index = 0 : index++;
-// }
-
-// window.onload = function () {
-//     setInterval(change, 5000);
-// };
