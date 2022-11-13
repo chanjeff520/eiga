@@ -40,8 +40,11 @@ router.post('/register', async (req, res ) => {
         });
         
         req.session.save(() => {
-            req.session.user_id = dbUserData.id;
+            req.session.id = dbUserData.id;
+            req.session.username = dbUserData.username;
             req.session.loggedIn = true;
+            req.session.cookie.expires = new Date(Date.now() + 3600000)
+            req.session.cookie.maxAge = 3600000
             console.log(req.session)
             res.status(200).json(dbUserData)
         });
