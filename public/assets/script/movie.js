@@ -3,7 +3,6 @@
 //var movieData;
 //get movie id number into string literal
 
-
 async function getMovieData(){
   const res = await fetch(`/api/movie/${window.location.href.split('movie/')[1]}/review`)
   const data = await res.json()
