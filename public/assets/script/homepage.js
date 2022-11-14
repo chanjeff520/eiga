@@ -19,7 +19,6 @@ function generateMovieCards(data) {
     //<div>
     cardEl.setAttribute("class", "card m-2");
     cardEl.setAttribute("style", "width: 16rem");
-
     cardImgLink.setAttribute("href", `/movie/${i+1}`);
 
     //cardImg attributes
@@ -59,14 +58,13 @@ function generateMovieCards(data) {
 
   }
 
+
 }
 
 //basic of fetch requires
 fetch('/api/movie')
   .then((response) => response.json())
   .then((data) => generateMovieCards(data));
-
-
 
 
 // Automatic Slideshow - change image every 20 second
