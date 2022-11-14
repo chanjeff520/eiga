@@ -90,7 +90,7 @@ const makeReviewHandler = async (e) => {
   let movie_id = window.location.href.split('movie/')[1];
 
   if(title && content){
-    const response = await fetch(`api/movie/${movie_id}/review`, {
+    const response = await fetch(`/api/movie/${movie_id}/review`, {
       method: 'POST',
       body: JSON.stringify({title, content, movie_id}),
       headers: {'Content-Type': 'application/json'}

@@ -49,3 +49,6 @@ function carousel() {
 
 
 document.getElementById('logInButton').addEventListener('click',loginFormHandler)
+document.getElementById('create-user-btn').addEventListener('click', () => {
+    window.location.replace('/signup');
+});

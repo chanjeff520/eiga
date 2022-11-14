@@ -3,13 +3,12 @@ const signupHandler= async (event) => {
 
     const username = document.getElementById('username-input').value.trim()
     const password = document.getElementById('password-input').value.trim()
-
-    console.log(username, password)
+    const confirmPassword = document.getElementById('confirm-password-input').value.trim()
 
     if(username && password){
-        const response = await fetch('/api/user', {
+        const response = await fetch('/api/user/signup', {
             method: 'POST',
-            body: JSON.stringify({username, password}),
+            body: JSON.stringify({username, password, confirmPassword}),
             headers: {'Content-Type': 'application/json'},
         });
 
