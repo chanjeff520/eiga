@@ -25,6 +25,18 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+//current logged in user
+router.get('/current', async (req, res) =>{
+    try {
+        const currentUser = {
+
+        }
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+})
 
 //create a user
 //----api/user----
@@ -41,10 +53,10 @@ router.post('/signup', async (req, res ) => {
         
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
-            // req.session.username = dbUserData.username;
+            req.session.username = dbUserData.username;
             req.session.loggedIn = true;
-            req.session.cookie.expires = new Date(Date.now() + 3600000)
-            req.session.cookie.maxAge = 3600000
+            // req.session.cookie.expires = new Date(Date.now() + 3600000)
+            // req.session.cookie.maxAge = 3600000
             console.log(req.session)
             res.status(200).json(dbUserData)
         });
@@ -63,6 +75,7 @@ router.post('/login', async (req, res) => {
                 username: req.body.username,
             },
         });
+
         if (!dbUserData) {
             res.status(400).json({ message: 'Incorrect username or password. Please try again!' });
             return;
@@ -77,11 +90,13 @@ router.post('/login', async (req, res) => {
 
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
             req.session.loggedIn = true;
-            req.session.cookie.expires = new Date(Date.now() + 3600000)
-            req.session.cookie.maxAge = 3600000
+            // req.session.cookie.expires = new Date(Date.now() + 3600000)
+            // req.session.cookie.maxAge = 3600000
+            res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
         });
-        res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
+        
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -93,13 +108,14 @@ router.post('/login', async (req, res) => {
 router.post('/logout', async (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
-            req.session.user_id = null
-            req.session.user = null
-            req.session.loggedIn = false
-            req.session.cookie.expires = new Date(Date.now() - hour) //need to clarify cookies!!!
+            // req.session.username = null
+            // req.session.user_id = null
+            // req.session.user = null
+            // req.session.loggedIn = false
+            // req.session.cookie.expires = new Date(Date.now() - hour) //need to clarify cookies!!!
+            console.log(req.session)
+            res.status(204).end();
         });
-        console.log(req.session)
-        res.status(204).end();
     } else {
             res.status(404).end();
         }
