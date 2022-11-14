@@ -5,7 +5,7 @@ const path = require('path')
 //----All movies page----
 router.get('/', async (req, res) => {
     try {console.log(req.session)
-        if (req.session.loggedIn == false) {
+        if (!req.session.loggedIn) {
             //else redirect to login page
             res.status(200).sendFile(path.join(__dirname,'../views/login.html'));
             console.log("This is not logged in page")
