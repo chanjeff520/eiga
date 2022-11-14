@@ -41,7 +41,7 @@ router.post('/signup', async (req, res ) => {
         
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
-            req.session.username = dbUserData.username;
+            // req.session.username = dbUserData.username;
             req.session.loggedIn = true;
             req.session.cookie.expires = new Date(Date.now() + 3600000)
             req.session.cookie.maxAge = 3600000
@@ -76,7 +76,7 @@ router.post('/login', async (req, res) => {
         }
 
         req.session.save(() => {
-            req.session.id = dbUserData.id;
+            req.session.user_id = dbUserData.id;
             req.session.loggedIn = true;
             req.session.cookie.expires = new Date(Date.now() + 3600000)
             req.session.cookie.maxAge = 3600000
@@ -93,9 +93,10 @@ router.post('/login', async (req, res) => {
 router.post('/logout', async (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
-            req.session.id = null
+            req.session.user_id = null
             req.session.user = null
             req.session.loggedIn = false
+            req.session.cookie.expires = new Date(Date.now() - hour) //need to clarify cookies!!!
         });
         console.log(req.session)
         res.status(204).end();

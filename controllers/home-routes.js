@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
 //   });
 //  //-- 
 
-//----Login----landing route
+//----Login----
 router.get('/login', async (req, res) => {
     try {
         res.status(200).sendFile(path.join(__dirname,'../views/login.html' ))
@@ -40,6 +40,16 @@ router.get('/login', async (req, res) => {
         res.status(500).json(error)
     }
 });
+
+router.get('/logout', async (req, res) => {
+    try {
+        res.status(200).sendFile(path.join(__dirname,'../views/logout.html' ))
+    } catch (error) {
+        res.status(500).json(error)
+    }
+});
+
+
 //----Signup----
 router.get('/signup', async (req, res) => {
     try {
