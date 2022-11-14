@@ -40,7 +40,7 @@ router.post('/signup', async (req, res ) => {
         });
         
         req.session.save(() => {
-            req.session.id = dbUserData.id;
+            req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
             req.session.loggedIn = true;
             req.session.cookie.expires = new Date(Date.now() + 3600000)

@@ -15,13 +15,13 @@ const loginFormHandler = async (event) => {
         });
 
         if (response.ok) {
-            window.location = "../views/dashboard.html"; // Redirecting to other page.
             console.log(response);
+            window.location.replace("/"); // Redirecting to other page.
           } else {
-            alert(response.statusText);
+            alert("Username or password invalid!");
         }
     } else {
-        alert("Username or password invalid!");
+        alert("Username and/or password cannot be blink!");
     }
 };
 
@@ -49,3 +49,6 @@ function carousel() {
 
 
 document.getElementById('logInButton').addEventListener('click',loginFormHandler)
+document.getElementById('create-user-btn').addEventListener('click', () => {
+    window.location.replace('/signup');
+});
