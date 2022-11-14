@@ -32,7 +32,7 @@ router.get('/', async (req, res) => {
 //   });
 //  //-- 
 
-//----Login----landing route
+//----Login----
 router.get('/login', async (req, res) => {
     try {
         res.status(200).sendFile(path.join(__dirname,'../views/login.html' ))
