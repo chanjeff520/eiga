@@ -91,3 +91,6 @@ function carousel() {
   // console.log("22") 
   setTimeout(carousel, 3000);    
 }
+
+console.log(document.cookie.username)
+console.log(document.session.username)

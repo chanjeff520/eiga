@@ -56,7 +56,7 @@ router.get('/:id/review', async (req,res) => {
 //create a review for a single movie
 //----api/movie----
 router.post('/:id/review', async (req,res) => {
-    try {
+    try {console.log(req.session)
         //if statement for empty field(put in public js page)
         const reviewData = await Review.create({
                content: req.body.content,
