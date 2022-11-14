@@ -4,4 +4,4 @@
 //new js library (anime.js, bad-words)
 //route homepage to log in page
 //styling pages (sign up page to replicate log in page, carousel, etc)
-
+//heroku deployment failing (error code: H10)
