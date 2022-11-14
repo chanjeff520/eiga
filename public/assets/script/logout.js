@@ -4,14 +4,11 @@ const response = await fetch('/api/user/logout', {
   headers: { 'Content-Type': 'application/json' }
 });
 
-
-
   if (!response.ok) {
   alert(response.statusText);
   } else {
     console.log("You've been successfully logged out")
   };
-  
 };
 
 logout();
