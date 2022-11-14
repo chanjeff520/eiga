@@ -1,7 +1,9 @@
 const { response } = require('express');
 const express = require('express')
 const router = require('express').Router();
-const { Movie, Review } = require('../../models')
+const { Movie, Review } = require('../../models');
+const Filter = require('bad-words');
+const filter = new Filter();
 
 //get all movies for movie page
 //----api/movie----
@@ -59,10 +61,10 @@ router.post('/:id/review', async (req,res) => {
     try {console.log(req.session)
         //if statement for empty field(put in public js page)
         const reviewData = await Review.create({
-               content: req.body.content,
+               content: filter.clean(req.body.content),
                user_id: req.session.user_id,  
                movie_id: req.body.movie_id,
-               title: req.body.title
+               title: filter.clean(req.body.title)
         });
         res.status(200).json(reviewData)
     } catch (err) {

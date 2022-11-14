@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/chanjeff520/eiga#readme",
   "dependencies": {
+    "bad-words": "^3.0.4",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.4",
     "dotenv": "^8.2.0",
