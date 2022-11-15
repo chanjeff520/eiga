@@ -14,18 +14,11 @@ p, .userfont {
     color: green;
 }
 
-
 .ghibliBackGround{
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
-
 }
-/* .images {
-    width: auto;
-    height: auto;
-} */
-
 
 .navbar {
     text-align: center;
@@ -34,11 +27,9 @@ p, .userfont {
 .login-btn {
     font-family: 'Bangers';
     color: green;
-    size: 48px;
 }
 
 .ehead{
     font-family: 'Bangers';
     color: green;
-    size: 40px;
 }

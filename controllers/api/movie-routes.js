@@ -55,6 +55,7 @@ router.get('/:id/review', async (req,res) => {
     }
 
 });
+
 //create a review for a single movie
 //----api/movie----
 router.post('/:id/review', async (req,res) => {
@@ -68,7 +69,6 @@ router.post('/:id/review', async (req,res) => {
         });
         res.status(200).json(reviewData)
     } catch (err) {
-        //console.log(err);
         console.log(req.session)
         res.status(500).json(err)
     }
