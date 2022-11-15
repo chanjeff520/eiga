@@ -32,6 +32,7 @@ p, .userfont {
 .login-btn {
     font-family: 'Bangers';
     color: green;
+    size: 48px;
 }
 
 .ehead{
