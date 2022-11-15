@@ -14,18 +14,11 @@ p, .userfont {
     color: green;
 }
 
-
 .ghibliBackGround{
     background-position: center;
     background-size:cover;
     background-repeat: no-repeat;
-
 }
-/* .images {
-    width: auto;
-    height: auto;
-} */
-
 
 .navbar {
     text-align: center;

@@ -1,7 +1,4 @@
-//dynically generate
-//get api
-//
-
+//dynamically generate each movie card
 function generateMovieCards(data) {
   //main Container
   const cardContainer = document.getElementById("card-container");
@@ -31,7 +28,7 @@ function generateMovieCards(data) {
     //<div>
     cardBody.setAttribute("class", "card-body");
 
-    //cardTitle attriubtes
+    //cardTitle attributes
     //<h5>
     cardTitle.setAttribute("class", "card-title d-flex justify-content-center");
 
@@ -41,7 +38,7 @@ function generateMovieCards(data) {
     cardLink.setAttribute("href", `/movie/${i+1}`);
     cardLink.setAttribute("class", "text-center");
 
-    //appending childs to approiate places
+    //appending children to appropriate places
     //<h5> child <a>
     //<div> child <h5>
     cardTitle.appendChild(cardLink);
@@ -55,10 +52,7 @@ function generateMovieCards(data) {
 
     //appending to cardContainer
     cardContainer.appendChild(cardEl);
-
   }
-
-
 }
 
 //basic of fetch requires
@@ -66,9 +60,7 @@ fetch('/api/movie')
   .then((response) => response.json())
   .then((data) => generateMovieCards(data));
 
-
 // Automatic Slideshow - change image every 15 second
-
 let ghibliArray = ["/assets/background-images/Ghibli_Cagliostro_House_Background.png", "/assets/background-images/Ghibli_Farmland_Background.jpg", "/assets/background-images/Ghibli_Forest_Background.jpg", "/assets/background-images/Ghibli_God_Ray_Forest_Background.png", "/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg", "/assets/background-images/Ghibli_Island_Background.jpg", "/assets/background-images/Ghibli_Night_City_Background.jpg", "/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"]
 
 let body = document.querySelector("body")
@@ -89,6 +81,3 @@ function carousel() {
   // console.log("22") 
   setTimeout(carousel, 15000);    
 }
-
-console.log(document.cookie.username)
-console.log(document.session.username)

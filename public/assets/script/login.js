@@ -4,8 +4,6 @@ const loginFormHandler = async (event) => {
     //get values
     const username = document.getElementById('userLoginInput').value;
     const password = document.getElementById('userPasswordInput').value;
-    
-
 
     if (username && password) {
         const response = await fetch('api/user/login',{
@@ -25,7 +23,7 @@ const loginFormHandler = async (event) => {
     }
 };
 
-
+//event Listeners
 document.getElementById('logInButton').addEventListener('click',loginFormHandler)
 document.getElementById('create-user-btn').addEventListener('click', () => {
     window.location.replace('/signup');

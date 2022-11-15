@@ -38,7 +38,6 @@ async function generateRightSide(data){
     //fetch the author
     const res = await fetch(`/api/user/${data.reviews[i].user_id}`)
     const userData = await res.json();
-    console.log(userData);
     
     //for the review card
     let reviewCard = document.createElement('div');

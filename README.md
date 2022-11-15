@@ -68,10 +68,3 @@ SO THAT To post my review on the movie
 [Vasu Apparao](https://github.com/Elduderino23)
 
 [Aaron Socher](https://github.com/AMESocker)
-
-
-//cookies clarification!!!!!!!
-//new js library (anime.js, bad-words)
-//route homepage to log in page
-//styling pages (sign up page to replicate log in page, carousel, etc)
-//heroku deployment failing (error code: H10)
