@@ -3,7 +3,6 @@
     font-family: 'Bangers';
 }
  
-
 .eiga{
 font-family: 'Bangers';
 color: green;
@@ -15,8 +14,6 @@ p, .userfont {
     color: green;
 }
 
-/* .topBar {
-} */
 
 .ghibliBackGround{
     background-position: center;
@@ -31,4 +28,14 @@ p, .userfont {
 .navbar {
     text-align: center;
 }
-/* background-repeat: no-repeat; background-size: cover */
+
+.login-btn {
+    font-family: 'Bangers';
+    color: green;
+}
+
+.ehead{
+    font-family: 'Bangers';
+    color: green;
+    size: 40px;
+}
