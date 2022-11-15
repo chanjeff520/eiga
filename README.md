@@ -1,6 +1,8 @@
 # Eiga - A Ghibli movie review site
 
-project-2-team-10
+## About
+
+This site is a collaboration between developers to build a site with REStful routes using express.js in a node.js environment. The site is a studio specific(Ghibli) movie site to view and review individual movies. The site features a user validation to sign in to the site, view movies and review movies.
 
 ## Deployment Site
 
