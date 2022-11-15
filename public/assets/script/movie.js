@@ -1,8 +1,5 @@
-//const { create } = require("../../../models/User");
-
 //var movieData;
 //get movie id number into string literal
-
 async function getMovieData(){
   const res = await fetch(`/api/movie/${window.location.href.split('movie/')[1]}/review`)
   const data = await res.json()
@@ -11,23 +8,13 @@ async function getMovieData(){
   generateRightSide(data);
 }
 
-//fetch the user author
-/*
-async function getReviewData(data, count){
-  const res = await fetch(`/api/user/${data.review[count].user_id}`)
-  const data = await res.json()
-  console.log(data)
-}
-getReviewData();
-*/
-
+//to generate the movie info and title
 function generateLeftSide(data){
   //for title
   const divEl = document.getElementById('filmTitle');
   let filmTitle = document.createElement('h2');
-  filmTitle.setAttribute('class', 'ml-5');
+  filmTitle.setAttribute('class', 'ml-5 bg-light px-2 rounded text-center');
   filmTitle.textContent = data.title;
-  console.log(data.title);
   divEl.appendChild(filmTitle);
   //for movie image under title
   const imgCont = document.getElementById('imgCont');
@@ -35,8 +22,14 @@ function generateLeftSide(data){
   filmImage.setAttribute('class', 'img-thumbnail');
   filmImage.setAttribute('src', data.image);
   imgCont.appendChild(filmImage);
+
+  //for background image
+  document.body.style.backgroundImage= `url(${data.movie_banner})`;
+  document.body.style.backgroundRepeat= "no-repeat";
+  document.body.style.backgroundSize = 'cover';
 }
 
+//to generate the reviews and author names
 async function generateRightSide(data){
   const reviewCardContainer = document.getElementById('review-section');
 
@@ -49,14 +42,14 @@ async function generateRightSide(data){
     
     //for the review card
     let reviewCard = document.createElement('div');
-    reviewCard.setAttribute('class', 'border border-dark rounded mt-1');
+    reviewCard.setAttribute('class', 'border border-dark bg-light rounded mt-1');
 
     //for the title row
     let titleDiv = document.createElement('div');
     let titleEl = document.createElement('h4');
     titleDiv.setAttribute('class', 'row');
     titleEl.setAttribute('class', 'ml-5');
-    titleEl.textContent = data.reviews[i].title + " By " + userData.username;
+    titleEl.textContent = data.reviews[i].title + " by " + userData.username;
 
     //for the content of inside the review row
     let reviewDiv = document.createElement('div');
@@ -80,7 +73,7 @@ async function generateRightSide(data){
   }
 }
 
-//haven't test this yet
+//this works 
 const makeReviewHandler = async (e) => {
   e.preventDefault();
 
