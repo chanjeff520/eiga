@@ -67,7 +67,7 @@ fetch('/api/movie')
   .then((data) => generateMovieCards(data));
 
 
-// Automatic Slideshow - change image every 20 second
+// Automatic Slideshow - change image every 15 second
 
 let ghibliArray = ["/assets/background-images/Ghibli_Cagliostro_House_Background.png", "/assets/background-images/Ghibli_Farmland_Background.jpg", "/assets/background-images/Ghibli_Forest_Background.jpg", "/assets/background-images/Ghibli_God_Ray_Forest_Background.png", "/assets/background-images/Ghibli_Howl_Castle_Alps_Background.jpg", "/assets/background-images/Ghibli_Island_Background.jpg", "/assets/background-images/Ghibli_Night_City_Background.jpg", "/assets/background-images/Ghibli_Spirit_Away_Train_Background.png"]
 
@@ -87,7 +87,7 @@ function carousel() {
   x[myIndex-1].style.display = "block"; 
   body.setAttribute("style", `background-image: url(${ghibliArray[myIndex-1]})`)
   // console.log("22") 
-  setTimeout(carousel, 3000);    
+  setTimeout(carousel, 15000);    
 }
 
 console.log(document.cookie.username)
