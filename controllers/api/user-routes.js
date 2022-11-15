@@ -25,23 +25,11 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
-//current logged in user
-router.get('/current', async (req, res) =>{
-    try {
-        const currentUser = {
-
-        }
-
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    }
-})
 
 //create a user
 //----api/user----
 router.post('/signup', async (req, res ) => {
-    console.log(req.body)
+    //validates if password is correct
     if (req.body.password !== req.body.confirmPassword) {
         res.status(400).send("password not right")
     }
@@ -51,6 +39,7 @@ router.post('/signup', async (req, res ) => {
             password: req.body.password,
         });
         
+        //save our cookie and session
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
@@ -111,10 +100,5 @@ router.post('/logout', async (req, res) => {
             res.status(404).end();
         }
     });
-
-
-
-
-
 
 module.exports = router;
