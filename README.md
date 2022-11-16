@@ -1,6 +1,8 @@
 # Eiga - A Ghibli movie review site
 
 ## About
+![Preview](./public/assets/images/Eiga.gif)
+
 
 This site is a collaboration between developers to build a site with REStful routes using express.js in a node.js environment. The site is a studio specific(Ghibli) movie site to view and review individual movies. The site features a user validation to sign in to the site, view movies and review movies.
 
@@ -52,6 +54,48 @@ SO THAT So that I can type out a review
 AS A User
 I WANT To be able to submit the review form 
 SO THAT To post my review on the movie 
+```
+
+## Code Snippets
+
+Below is a code snippet of the process of dynamically generating the selected movie card
+```
+function generateLeftSide(data){
+  const divEl = document.getElementById('filmTitle');
+  let filmTitle = document.createElement('h2');
+  filmTitle.setAttribute('class', 'ml-5 bg-light px-2 rounded text-center');
+  filmTitle.textContent = data.title;
+  divEl.appendChild(filmTitle);
+  const imgCont = document.getElementById('imgCont');
+  let filmImage = document.createElement('img');
+  filmImage.setAttribute('class', 'img-thumbnail');
+  filmImage.setAttribute('src', data.image);
+  imgCont.appendChild(filmImage);
+
+  document.body.style.backgroundImage= `url(${data.movie_banner})`;
+  document.body.style.backgroundRepeat= "no-repeat";
+  document.body.style.backgroundSize = 'cover';
+}
+```
+
+Below is a code snippet for how to create a review to post
+
+```
+router.post('/:id/review', async (req,res) => {
+    try {console.log(req.session)
+        const reviewData = await Review.create({
+               content: filter.clean(req.body.content),
+               user_id: req.session.user_id,  
+               movie_id: req.body.movie_id,
+               title: filter.clean(req.body.title)
+        });
+        res.status(200).json(reviewData)
+    } catch (err) {
+        console.log(req.session)
+        res.status(500).json(err)
+    }
+    console.log("create a review for a certain movie");
+});
 ```
 
 ## Thrid Party APIs
