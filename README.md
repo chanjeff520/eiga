@@ -34,10 +34,6 @@ This site is a collaboration between developers to build a site with REStful rou
 HTML, Github, Javascript, CSS, Git, Bash, Bootstrap 4.6.2
 
 
-## Usage
-To use our website, a user will need to first sign up for an account.
-
-
 ## User Story
 ```
 AS A Ghibli movie fan
@@ -63,7 +59,7 @@ SO THAT To post my review on the movie
 
 ## Code Snippets
 
-Below is a code snippet of the process of dynamically generating the selected movie card
+Below is a code snippet of the process of dynamically generating the selected movie card and the background of the selected movie page.
 ```js
 function generateLeftSide(data){
   const divEl = document.getElementById('filmTitle');
@@ -83,7 +79,7 @@ function generateLeftSide(data){
 }
 ```
 
-Below is a code snippet for how to create a review to post
+Below is a code snippet for how to create a review to post. We used bad-words.js to censor the review and title and get the user_id stored in the session. If creating the new review is complete, the server will respond with code 200. If not it will respond with a 500 server error code.
 
 ```js
 router.post('/:id/review', async (req,res) => {
