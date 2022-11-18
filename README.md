@@ -12,26 +12,31 @@ This site is a collaboration between developers to build a site with REStful rou
 
 ## Required Installation
 
-[bad-words](https://www.npmjs.com/package/bad-words)
+* [bad-words](https://www.npmjs.com/package/bad-words)
 
-[bcrypt package](https://www.npmjs.com/package/bcrypt)
+* [bcrypt package](https://www.npmjs.com/package/bcrypt)
  
-[connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+* [connect-session-sequelize](https://www.npmjs.com/package/connect-session-sequelize)
  
-[dotenv package](https://www.npmjs.com/package/dotenv)
+* [dotenv package](https://www.npmjs.com/package/dotenv)
 
-[express](https://www.npmjs.com/package/express)
+* [express](https://www.npmjs.com/package/express)
  
-[express-session](https://www.npmjs.com/package/express-session)
+* [express-session](https://www.npmjs.com/package/express-session)
  
-[MySQL2](https://www.npmjs.com/package/mysql2)
+* [MySQL2](https://www.npmjs.com/package/mysql2)
  
-[Sequelize](https://www.npmjs.com/package/sequelize)
+* [Sequelize](https://www.npmjs.com/package/sequelize)
 
 
 ## Technologies Used
 
-HTML, Github, Javascrpit, CSS, Git Bash, Bootstrap 4.6.2
+HTML, Github, Javascript, CSS, Git, Bash, Bootstrap 4.6.2
+
+
+## Usage
+To use our website, a user will need to first sign up for an account.
+
 
 ## User Story
 ```
@@ -59,7 +64,7 @@ SO THAT To post my review on the movie
 ## Code Snippets
 
 Below is a code snippet of the process of dynamically generating the selected movie card
-```
+```js
 function generateLeftSide(data){
   const divEl = document.getElementById('filmTitle');
   let filmTitle = document.createElement('h2');
@@ -80,7 +85,7 @@ function generateLeftSide(data){
 
 Below is a code snippet for how to create a review to post
 
-```
+```js
 router.post('/:id/review', async (req,res) => {
     try {console.log(req.session)
         const reviewData = await Review.create({
